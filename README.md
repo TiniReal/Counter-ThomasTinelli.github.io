@@ -6,3 +6,5 @@ The counter value can be controlled by clicking on the -/+ buttons, which respec
 -Reset button resets the count to 0.
 
 Web application developed with CSS and JAVASCRIPT
+
+Try the application now --> https://tinireal.github.io/Counter-ThomasTinelli.github.io/
