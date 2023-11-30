@@ -1,78 +1,63 @@
+// Create element function
+function createEl(elName, classNames, textContent) {
+  const el = document.createElement(elName);
+  if (classNames) {
+    el.classList.add(...classNames);
+  }
+  if (textContent) {
+    el.textContent = textContent;
+  }
+  return el;
+}
+
+// Append child function
+function appendChild(parent, child) {
+  parent.appendChild(child); 
+}
+
 // Create elements
-const container = document.createElement('div');
-const heading = document.createElement('h1');
-const p = document.createElement('p');
-const counterContainer = document.createElement('div');
-const counterText = document.createElement('p');
-const incrementBtn = document.createElement('button');
-const decrementBtn = document.createElement('button');
-const resetBtn = document.createElement('button');
+const container = createEl('div', ['container']);
+const heading = createEl('h1', ['heading'], 'Counter');
+const p = createEl('p', ['p'], 'Click the buttons to increment or decrement the counter.');
 
-//Create footer
-const footerContainer = document.createElement('div');
-const footer = document.createElement('footer');
-const footerText = document.createElement('p');
+const counterContainer = createEl('div', ['counter']);
+const counterText = createEl('p', ['counter-text'], 0);
+const incrementBtn = createEl('button', ['my-btn'], '+');
+const decrementBtn = createEl('button', ['my-btn'], '-');
+const resetBtn = createEl('button', ['my-btn'], 'Reset');
 
-// Set classes
-container.classList.add('container');
-heading.classList.add('heading');
-p.classList.add('p');
-counterContainer.classList.add('counter');
-counterText.classList.add('counter-text');
-incrementBtn.classList.add('my-btn');
-decrementBtn.classList.add('my-btn');
-resetBtn.classList.add('my-btn');
+// Create footer
+const footerContainer = createEl('div', ['footer-container']);
+const footer = createEl('footer', ['footer']);
+const footerText = createEl('p', ['footer-text'], 'Created by Thomas Tinelli 2023');
 
-//Set footer classes
-footerContainer.classList.add('footer-container');
-footer.classList.add('footer');
-footerText.classList.add('footer-text');
-
-// Set attributes and text content
-heading.textContent = 'Counter';
-p.textContent = 'Click the buttons to increment or decrement the counter.';
-counterText.textContent = 0;
-incrementBtn.textContent = '+';
-decrementBtn.textContent = '-';
-resetBtn.textContent = 'Reset';
-
-// Set footer text content
-footerText.textContent = 'Created by Thomas Tinelli 2023';
-
-// Add event listeners
-let counter = 0;
-decrementBtn.addEventListener('click', () => {
-  counter--;
-  counterText.textContent = counter; 
+// Event listener
+incrementBtn.addEventListener('click', () => {
+  counterText.textContent++; 
 });
 
-incrementBtn.addEventListener('click', () => {
-  counter++;
-  counterText.textContent = counter;
+decrementBtn.addEventListener('click', () => {
+  counterText.textContent--;
 });
 
 resetBtn.addEventListener('click', () => {
-    counter = 0;
-    counterText.textContent = counter;
+  counterText.textContent = 0;
 });
 
-// Append elements to the DOM
-container.appendChild(heading);
-container.appendChild(p);
 
-container.appendChild(counterContainer);
-counterContainer.appendChild(decrementBtn);
-counterContainer.appendChild(counterText);
-counterContainer.appendChild(incrementBtn);
-counterContainer.appendChild(resetBtn);
+// Append elements  
+appendChild(container, heading);
+appendChild(container, p);
 
-//Append footer
-footerContainer.appendChild(footer);
-footer.appendChild(footerText);
+appendChild(counterContainer, decrementBtn);
+appendChild(counterContainer, counterText);
+appendChild(counterContainer, incrementBtn);
+appendChild(counterContainer, resetBtn);
 
-// Append the container to the DOM
-document.body.appendChild(container);
-document.body.appendChild(footerContainer);
+appendChild(container, counterContainer);
 
+appendChild(footer, footerText);
+appendChild(footerContainer, footer);
 
-
+appendChild(document.body, container);
+appendChild(document.body, footerContainer);
