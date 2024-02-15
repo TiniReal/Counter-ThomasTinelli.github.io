@@ -1,10 +1,21 @@
-# Counter by ThomasTinelli
-This counter is a simple application that works as a counter.
+# App Counter
 
-The counter value can be controlled by clicking on the -/+ buttons, which respectively decrement and increment counter's value by 1
+Questa è una semplice applicazione contatore realizzata con HTML, CSS e JavaScript. Consente agli utenti di incrementare, decrementare e ripristinare il valore di un contatore con il clic dei pulsanti.
 
--Reset button resets the count to 0.
+## Funzionalità
 
-Web application developed with CSS and JAVASCRIPT
+- **Incrementa Contatore**: Cliccando sul pulsante "+" si incrementa il valore del contatore di 1.
+- **Decrementa Contatore**: Cliccando sul pulsante "-" si decrementa il valore del contatore di 1.
+- **Resetta Contatore**: Cliccando sul pulsante "Reset" si riporta il valore del contatore a 0.
 
-Try the application now --> https://tinireal.github.io/Counter-ThomasTinelli.github.io/
+## Utilizzo
+
+Clicca sui pulsanti per interagire con il contatore.
+
+## Contributi
+
+I contributi sono benvenuti! Se hai suggerimenti, miglioramenti o correzioni di bug, sentiti libero di aprire una segnalazione o inviare una richiesta di pull.
+
+## Licenza
+
+Questo progetto è distribuito con licenza [MIT](LICENSE).
