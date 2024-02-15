@@ -31,17 +31,18 @@ const footerContainer = createEl('div', ['footer-container']);
 const footer = createEl('footer', ['footer']);
 const footerText = createEl('p', ['footer-text'], 'Created by Thomas Tinelli 2023');
 
-// Event listener
-incrementBtn.addEventListener('click', () => {
-  counterText.textContent++; 
-});
-
-decrementBtn.addEventListener('click', () => {
-  counterText.textContent--;
-});
-
-resetBtn.addEventListener('click', () => {
-  counterText.textContent = 0;
+// Event listener sul container per l'Event Delegation
+container.addEventListener('click', (event) => {
+  if (event.target.matches('.my-btn')) {
+    const btnValue = event.target.textContent;
+    if (btnValue === '+') {
+      counterText.textContent++;
+    } else if (btnValue === '-') {
+      counterText.textContent--;
+    } else if (btnValue === 'Reset') {
+      counterText.textContent = 0;
+    }
+  }
 });
 
 
